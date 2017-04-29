@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
@@ -32,7 +33,13 @@ import { ContactUsComponent } from './contact-us/contact-us/contact-us.component
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: 'about', component: AboutComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {path: '**', redirectTo: 'dashboard', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
