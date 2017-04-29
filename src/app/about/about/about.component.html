@@ -1,14 +1,43 @@
-  <div id="page-wrapper">
-    <div id="page-inner">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2>عن مدارسنا</h2>
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{aboutPage.title}}</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+
+    <form class="form-horizontal"  (ngSubmit)="save()" [formGroup]="aboutForm">
+
+      <div class="form-group">
+        <div>
+          <textarea class="form-control" 
+                    formControlName="body"
+                    rows="10"
+                    required
+                    placeholder="اكتب هنا نبذه مختصرة عن المدارس، متى اسست والمراحل الدراسية والرسوم إلى غيرة..."
+                    ></textarea>
         </div>
       </div>
-      <!-- /. ROW  -->
-      <hr />
 
-     
-    </div>
-    <!-- /. PAGE INNER  -->
+      <div class="form-group">
+        <div>
+          <span>
+                  <button class="btn btn-primary" 
+                          type="submit"
+                          [disabled]="!aboutForm.valid">
+                    حفظ
+                </button>
+                </span>
+        </div>
+      </div>
+
+    </form>
+<br>Dirty: {{aboutForm.dirty}}
+<br>Touched: {{aboutForm.touched}}
+<br>Valid: {{aboutForm.valid}}
+<br>Value: {{aboutForm.value | json}}
   </div>
+  <!-- /. PAGE INNER  -->
+</div>
