@@ -27,39 +27,41 @@
 
 
 
-        <li class="active-link">
-          <a href="index.html"><i class="fa fa-desktop fa-fw"></i>&nbsp; لوحة التحكم</a>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/dashboard']"><i class="fa fa-desktop fa-fw"></i>&nbsp; لوحة التحكم</a>
         </li>
 
-
-        <li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/about']"><i class="fa fa-address-card-o fa-fw"></i>&nbsp; عن مدارسنا</a>
         </li>
-        <li>
-          <a href="blank.html"><i class="fa fa-bell-o "></i>&nbsp; الإشعارات</a>
-        </li>
-        <li>
-          <a href="blank.html"><i class="fa fa-newspaper-o "></i>&nbsp; أخبار المدارس</a>
+        
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/notification']"><i class="fa fa-bell-o "></i>&nbsp; الإشعارات</a>
         </li>
 
-        <li>
-          <a href="#"><i class="fa fa-map-marker "></i>&nbsp; الوصول للمدارس</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-picture-o"></i>&nbsp; معرض الصور</a>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-newspaper-o "></i>&nbsp; أخبار المدارس</a>
         </li>
 
-        <li>
-          <a href="#"><i class="fa fa-play-circle "></i>&nbsp; معرض الفيديو</a>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-map-marker "></i>&nbsp; الوصول للمدارس</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-graduation-cap "></i>&nbsp; التوظيف</a>
+        
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-picture-o"></i>&nbsp; معرض الصور</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-link "></i>&nbsp; التعليم الإلكتروني</a>
+
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-play-circle "></i>&nbsp; معرض الفيديو</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-phone-square "></i>&nbsp; اتصل بنا</a>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-graduation-cap "></i>&nbsp; التوظيف</a>
+        </li >
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-link "></i>&nbsp; التعليم الإلكتروني</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['/about']"><i class="fa fa-phone-square "></i>&nbsp; اتصل بنا</a>
         </li>
 
       </ul>

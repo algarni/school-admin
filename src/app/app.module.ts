@@ -6,16 +6,16 @@ import { RouterModule } from "@angular/router";
 import { AngularFireModule } from "angularfire2";
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { AboutComponent } from './about/about/about.component';
-import { NotificationComponent } from './notification/notification/notification.component';
-import { NewsComponent } from './news/news/news.component';
-import { MapComponent } from './map/map/map.component';
-import { VideoComponent } from './video/video/video.component';
-import { ImageComponent } from './image/image/image.component';
-import { JobComponent } from './job/job/job.component';
-import { ElearningComponent } from './elearning/elearning/elearning.component';
-import { ContactUsComponent } from './contact-us/contact-us/contact-us.component';
+import { AboutComponent } from "app/about/about.component";
+import { DashboardComponent } from "app/dashboard/dashboard.component";
+import { NotificationComponent } from "app/notification/notification.component";
+import { NewsComponent } from "app/news/news.component";
+import { MapComponent } from "app/map/map.component";
+import { VideoComponent } from "app/video/video.component";
+import { ImageComponent } from "app/image/image.component";
+import { JobComponent } from "app/job/job.component";
+import { ElearningComponent } from "app/elearning/elearning.component";
+import { ContactUsComponent } from "app/contact-us/contact-us.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFYSIrNmiEndZqrFJ-GcHecrOXxwPrPB4",
@@ -47,6 +47,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },
+      { path: 'notification', component: NotificationComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
