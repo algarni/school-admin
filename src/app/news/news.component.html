@@ -1,3 +1,52 @@
-<p>
-  news works!
-</p>
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <h2>{{pageTitle}}</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+
+    <form class="form-horizontal"  (ngSubmit)="save()" [formGroup]="schoolNewsForm">
+
+      <div class="form-group">
+        <div>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="title"
+                 required
+                 placeholder="اكتب عنوان الخبر هنا">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <textarea class="form-control" 
+                    formControlName="body"
+                    rows="10"
+                    required
+                    placeholder="اكتب نص الخبر هنا"
+                    ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <span>
+                  <button class="btn btn-primary" 
+                          type="submit"
+                          [disabled]="!schoolNewsForm.valid">
+                    حفظ
+                </button>
+                </span>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+

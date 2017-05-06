@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from "@angular/router";
 import { AngularFireModule } from "angularfire2";
+import { AgmCoreModule } from "angular2-google-maps/core";
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from "app/about/about.component";
@@ -16,6 +17,9 @@ import { ImageComponent } from "app/image/image.component";
 import { JobComponent } from "app/job/job.component";
 import { ElearningComponent } from "app/elearning/elearning.component";
 import { ContactUsComponent } from "app/contact-us/contact-us.component";
+import { NotificationListComponent } from "app/notification/notification-list.component";
+import { NewsListComponent } from "app/news/news-list.component";
+import { UploadService } from "app/shared/upload.service";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFYSIrNmiEndZqrFJ-GcHecrOXxwPrPB4",
@@ -32,7 +36,9 @@ export const firebaseConfig = {
     DashboardComponent,
     AboutComponent,
     NotificationComponent,
+    NotificationListComponent,
     NewsComponent,
+    NewsListComponent,
     MapComponent,
     VideoComponent,
     ImageComponent,
@@ -48,12 +54,20 @@ export const firebaseConfig = {
     RouterModule.forRoot([
       { path: 'about', component: AboutComponent },
       { path: 'notification', component: NotificationComponent },
+      { path: 'notification-list', component: NotificationListComponent },
+      { path: 'news', component: NewsComponent },
+      { path: 'news-list', component: NewsListComponent },
+      {path: 'image', component: ImageComponent},
+      { path: 'map', component: MapComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
-    ])
+    ]),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCtkPxYWOhwB2nYqwX2Td9aP0EjFkpJhv8'
+    })
   ],
-  providers: [],
+  providers: [UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,20 @@
-<p>
-  map works!
-</p>
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{pageTitle}}</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+
+    <!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="locationSelected($event)">
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng" ></sebm-google-map-marker>
+</sebm-google-map>
+
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>

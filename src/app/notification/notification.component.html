@@ -43,20 +43,7 @@
         </div>
       </div>
     </form>
-<h2>الإشعارت السابقة</h2>
-    <table class="table">
-      <tr>
-        <th>#</th>
-        <th>عنوان</th>
-        <th>نص الإشعار</th>
-      </tr>
-      <tr *ngFor="let note of (schoolNotifications | async); let i = index">
-        <td>{{i}}</td>
-        <td>{{note.title}}</td>
-        <td>{{note.body}}</td>
-      </tr>
-    </table>
-    
+
 <br>Dirty: {{notificationForm.dirty}}
 <br>Touched: {{notificationForm.touched}}
 <br>Valid: {{notificationForm.valid}}

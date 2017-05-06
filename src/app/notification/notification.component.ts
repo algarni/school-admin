@@ -14,7 +14,6 @@ export class NotificationComponent implements OnInit {
   pageTitle: string = 'الإشعارات';
   notificationForm: FormGroup;
   schoolNotification: SchoolNotification;
-  schoolNotifications: FirebaseListObservable<ISchoolNotification[]>;
 
   constructor(
     private fb: FormBuilder,
@@ -26,8 +25,6 @@ export class NotificationComponent implements OnInit {
       title: ['', Validators.required],
       body: ['', Validators.required]
     });
-
-    this.schoolNotifications = this.af.database.list('/notification');
   }
 
   save() {

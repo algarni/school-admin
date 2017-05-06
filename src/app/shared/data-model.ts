@@ -28,3 +28,50 @@ export class SchoolNotification implements ISchoolNotification{
     title: string;
     body: string;
 }
+
+/**
+ * News data model
+ */
+
+export interface ISchoolNews{
+    title: string;
+    body: string;
+}
+
+export class SchoolNews implements ISchoolNews{
+    title: string;
+    body: string;
+}
+
+/**
+ * Coordinates data model
+ */
+
+export interface ISchoolCoordinates{
+    lat: number;
+    lng: number;
+}
+
+export class SchoolCoordinates implements ISchoolCoordinates{
+    lat: number;
+    lng: number;
+}
+
+/**
+ * Upload data model
+ */
+
+export class Upload{
+    $key: string;
+    file: File;
+    name: string;
+    type: string;
+    url: string;
+    progress: number;
+    createdAt: Date = new Date();
+
+    constructor(file: File) {
+        this.file = file;
+        console.log('file type', file.type);
+    }
+}
