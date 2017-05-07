@@ -6,7 +6,7 @@ import { Upload } from "app/shared/data-model";
 
 @Injectable()
 export class UploadService {
-    private basePath: string = '/uploads';
+    // private basePath: string = '/uploads';
     private uploadTask: firebase.storage.UploadTask;
     uploads: FirebaseListObservable<Upload[]>;
 
@@ -15,24 +15,41 @@ export class UploadService {
         private db: AngularFireDatabase
     ) { }
 
-    getUploads(query = {}) {
-        this.uploads = this.db.list(this.basePath, {
+    // getUploads(query = {}) {
+    //     this.uploads = this.db.list(this.basePath, {
+    //         query: query
+    //     });
+    //     return this.uploads
+    // }
+
+    getImages(query = {}) {
+        let basePath = '/images';
+        this.uploads = this.db.list(basePath, {
             query: query
         });
         return this.uploads
     }
 
-    deleteUpload(upload: Upload) {
-        this.deleteFileData(upload.$key)
-            .then(() => {
-                this.deleteFileStorage(upload.name)
-            })
-        .catch(error => console.log(error))
+    getVideos(query = {}) {
+        let basePath = '/videos';
+        this.uploads = this.db.list(basePath, {
+            query: query
+        });
+        return this.uploads
     }
 
+    // deleteUpload(upload: Upload) {
+    //     this.deleteFileData(upload.$key)
+    //         .then(() => {
+    //             this.deleteFileStorage(upload.name)
+    //         })
+    //     .catch(error => console.log(error))
+    // }
+
     pushUpload(upload: Upload) {
+        let basePath = '/' + upload.file.type.split('/')[0];
         let storageRef = firebase.storage().ref();
-        this.uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
+        this.uploadTask = storageRef.child(`${basePath}s/${upload.file.name}`).put(upload.file);
 
         this.uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
             (snapshot) => {
@@ -53,15 +70,16 @@ export class UploadService {
     }
 
     private saveFileData(upload: Upload) {
-        this.db.list(`${this.basePath}/`).push(upload);
+        let basePath = '/' + upload.file.type.split('/')[0];
+        this.db.list(`${basePath}s/`).push(upload);
     }
 
-    private deleteFileData(key: string) {
-        return this.db.list(`${this.basePath}/`).remove(key);
-    }
+    // private deleteFileData(key: string) {
+    //     return this.db.list(`${this.basePath}/`).remove(key);
+    // }
 
-    private deleteFileStorage(name: string) {
-        let strorageRef = firebase.storage().ref();
-        strorageRef.child(`${this.basePath}/${name}`).delete();
-    }
+    // private deleteFileStorage(name: string) {
+    //     let strorageRef = firebase.storage().ref();
+    //     strorageRef.child(`${this.basePath}/${name}`).delete();
+    // }
 }
