@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Upload } from "app/shared/data-model";
-import { UploadService } from "app/shared/upload.service";
 import * as _ from "lodash";
+import { ImageUploadService } from "app/image/image-upload.service";
 
 @Component({
   selector: 'app-image',
@@ -9,12 +9,15 @@ import * as _ from "lodash";
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  pageTitle: string = "معرض الصور";
+  pageTitle: string = "رفع الصور";
   selectedFiles: FileList;
   currentUpload: Upload;
+  allowedExtension: string[] = ['jpeg', 'jpg', 'png'];
+  isValidFile: boolean = true;
+
 
   constructor(
-    private uploadService: UploadService
+    private uploadService: ImageUploadService
   ) { }
 
   ngOnInit() {
@@ -24,19 +27,23 @@ export class ImageComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
-  uploadSingle() {
-    let file = this.selectedFiles.item(0);
-    this.currentUpload = new Upload(file);
-    this.uploadService.pushUpload(this.currentUpload);
-  }
 
   uploadMulti() {
     let files = this.selectedFiles;
     let filesIndex = _.range(files.length);
     _.each(filesIndex, (idx) => {
       this.currentUpload = new Upload(files[idx]);
-      this.uploadService.pushUpload(this.currentUpload)
+      for (let i in this.allowedExtension) {
+        if (this.getUploadExtension(this.currentUpload) === this.allowedExtension[i]) {
+          this.uploadService.pushUpload(this.currentUpload);
+        } 
+      }
+      
     });
+  }
+
+  private getUploadExtension(upload: Upload): string{
+    return upload.file.type.split('/')[1].toLowerCase();
   }
 
 }

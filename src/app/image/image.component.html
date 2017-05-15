@@ -8,38 +8,29 @@
     <!-- /. ROW  -->
     <hr />
 
+    <div>
+      <div class="alert alert-warning">
+        <strong>تنبية</strong> لابد أن تكون الصورة بأحد الصيغ التالية: jpeg, jpg, png
+      </div>
+    </div>
+
     <div *ngIf="currentUpload">
       <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
 
       Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
     </div>
 
-
     <div class="box">
 
-      <h3>Single File Upload</h3>
-
-      <label>
-       <input type="file" class="button" (change)="detectFiles($event)">
-    </label>
-
-      <button class="button is-primary" [disabled]="!selectedFiles" (click)="uploadSingle()">
-
-      Upload Single
-    </button>
-
-      <hr>
-
-      <h3>Multiple File Upload</h3>
 
       <label>
        <input type="file" class="button" (change)="detectFiles($event)" multiple>
     </label>
 
 
-      <button class="button is-primary" [disabled]="!selectedFiles" (click)="uploadMulti()">
+      <button class="button btn btn-primary is-primary" [disabled]="!selectedFiles" (click)="uploadMulti()">
 
-        Upload Multiple
+        رفع
       </button>
     </div>
 

@@ -72,6 +72,5 @@ export class Upload{
 
     constructor(file: File) {
         this.file = file;
-        console.log('file type', file.type);
     }
 }

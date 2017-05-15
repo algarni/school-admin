@@ -1,0 +1,35 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>{{pageTitle}}</h2>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+
+        <a [routerLink]="['/image']" class="btn btn-primary">جديد</a>
+        <br>
+        <br>
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>اسم الملف</th>
+                <th>الصورة</th>
+                <th>خيارات</th>
+            </tr>
+            <tr *ngFor="let upload of uploads | async; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{upload.name}}</td>
+                <td>
+                    <img src="{{upload.url}}" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                </td>
+                <td>
+                    <button (click)='deleteUpload(upload)' class="button is-danger is-small">حذف</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>

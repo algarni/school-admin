@@ -19,7 +19,10 @@ import { ElearningComponent } from "app/elearning/elearning.component";
 import { ContactUsComponent } from "app/contact-us/contact-us.component";
 import { NotificationListComponent } from "app/notification/notification-list.component";
 import { NewsListComponent } from "app/news/news-list.component";
-import { UploadService } from "app/shared/upload.service";
+import { ImageListComponent } from "app/image/image-list.component";
+import { ImageUploadService } from "app/image/image-upload.service";
+import { VideoUploadService } from "app/video/video.service";
+import { VideoListComponent } from "app/video/video-list.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFYSIrNmiEndZqrFJ-GcHecrOXxwPrPB4",
@@ -41,7 +44,9 @@ export const firebaseConfig = {
     NewsListComponent,
     MapComponent,
     VideoComponent,
+    VideoListComponent,
     ImageComponent,
+    ImageListComponent,
     JobComponent,
     ElearningComponent,
     ContactUsComponent
@@ -57,7 +62,10 @@ export const firebaseConfig = {
       { path: 'notification-list', component: NotificationListComponent },
       { path: 'news', component: NewsComponent },
       { path: 'news-list', component: NewsListComponent },
-      {path: 'image', component: ImageComponent},
+      { path: 'image', component: ImageComponent },
+      { path: 'image-list', component: ImageListComponent },
+      { path: 'video', component: VideoComponent },
+      { path: 'video-list', component: VideoListComponent },
       { path: 'map', component: MapComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -67,7 +75,7 @@ export const firebaseConfig = {
       apiKey: 'AIzaSyCtkPxYWOhwB2nYqwX2Td9aP0EjFkpJhv8'
     })
   ],
-  providers: [UploadService],
+  providers: [ImageUploadService, VideoUploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
