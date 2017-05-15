@@ -1,3 +1,187 @@
-<p>
-  job works!
-</p>
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <h2>{{pageTitle}}</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+
+    <form class="form-horizontal"  (ngSubmit)="save()" [formGroup]="jobApplicationFrom">
+
+      <div class="form-group">
+        <div>
+          <label for="fullName">الاسم كاملا</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="fullName"
+                 id="fullName"
+                 required
+                 placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="religion">الديانة</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="religion"
+                 id="religion"
+                 required
+                 placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="sex">الجنس</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="sex"
+                 id="sex"
+                 required
+                 placeholder="ذكر، أنثى">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="residentIn">مقيم بـ</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="residentIn"
+                 id="residentIn"
+                 required
+                 placeholder="المملكة العربية السعودية، مصر ....">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="city">مقيم بـ</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="city"
+                 id="city"
+                 required
+                 placeholder="الرياض، القاهرة ...">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="dateOfBirth">تاريخ الميلاد</label>
+            <input type="date" 
+                  class="form-control"
+                  formControlName="dateOfBirth"
+                  id="dateOfBirth"
+                  required>
+          
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="maritalStatus">الحالة الإجتماعية</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="maritalStatus"
+                 id="maritalStatus"
+                 required
+                 placeholder="متزوج، أعزب ...">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="jobTitle">الوظيفة المتقدم إليها</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="jobTitle"
+                 id="jobTitle"
+                 required
+                 placeholder="علوم، حاسب آلي، رياضيات ...">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="qualification">المؤهلات</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="qualification"
+                 id="qualification"
+                 required
+                 placeholder="بكالوريوس تربية إسلامية، بكالوريوس تربية إجتماعية">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="eduSpecialization">التخصص التربوي</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="eduSpecialization"
+                 id="eduSpecialization"
+                 required
+                 placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="yearsOfExperience">عدد سنوات الخبرة</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="yearsOfExperience"
+                 id="yearsOfExperience"
+                 required
+                 placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="mobile">الجوال</label>
+          <input type="text" 
+                 class="form-control"
+                 formControlName="mobile"
+                 id="mobile"
+                 required
+                 placeholder="05XXXXXX">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" 
+                 class="form-control"
+                 formControlName="email"
+                 id="email"
+                 required
+                 placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <span>
+                  <button class="btn btn-primary" 
+                          type="submit"
+                          [disabled]="!jobApplicationFrom.valid">
+                    حفظ
+                </button>
+                </span>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>
+

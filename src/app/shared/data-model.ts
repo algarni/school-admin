@@ -74,3 +74,24 @@ export class Upload{
         this.file = file;
     }
 }
+
+/**
+ *Job application data model
+ */
+
+export class JobApplication{
+    fullName: string;
+    religion: string;
+    sex: string;
+    residentIn: string;
+    city: string;
+    dateOfBirth: Date;
+    maritalStatus: string;
+    jobTitle: string;
+    qualification: string;
+    eduSpecialization: string;
+    yearsOfExperience: string;
+    mobile: string;
+    email: string;
+    createdAt: Date;
+}

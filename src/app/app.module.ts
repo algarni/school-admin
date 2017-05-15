@@ -67,6 +67,7 @@ export const firebaseConfig = {
       { path: 'video', component: VideoComponent },
       { path: 'video-list', component: VideoListComponent },
       { path: 'map', component: MapComponent },
+      { path: 'job', component: JobComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
