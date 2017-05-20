@@ -25,6 +25,5 @@ export class ApplicationDetailComponent implements OnInit {
             id = params['id'];
         });
         this.application = this.af.database.object(`/jobs/${id}`)
-        console.log(this.application);
      }
 }
