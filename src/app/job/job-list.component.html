@@ -7,24 +7,33 @@
     </div>
     <!-- /. ROW  -->
     <hr />
-<a [routerLink]="['/notification']" class="btn btn-primary">جديد</a>
-<br>
-<br>
+    <a [routerLink]="['/job']" class="btn btn-primary">جديد</a>
+    <br>
+    <br>
     <table class="table">
       <tr>
         <th>#</th>
-        <th>عنوان</th>
-        <th>نص الإشعار</th>
+        <th>اسم المتقدم</th>
+        <th>التخصص</th>
+        <th>سنوات الخبرة</th>
+        <th>الدولة</th>
+        <th>المدينة</th>
       </tr>
-      <tr *ngFor="let note of (notificationList | async); let i = index">
+      <tr *ngFor="let application of (jobApplications | async); let i = index">
         <td>{{i + 1}}</td>
-        <td>{{note.title}}</td>
-        <td>{{note.body}}</td>
+        <td>
+          <a [routerLink]="['/application-detail', application.$key]">
+            {{application.fullName}}
+          </a>
+        </td>
+        <td>{{application.jobTitle}}</td>
+        <td>{{application.city}}</td>
+        <td>{{application.residentIn}}</td>
+        <td>{{application.city}}</td>
       </tr>
     </table>
-    
+
 
   </div>
   <!-- /. PAGE INNER  -->
 </div>
-

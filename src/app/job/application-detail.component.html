@@ -1,0 +1,114 @@
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{pageTitle}}</h2>
+      </div>
+    </div>
+    <!-- /. ROW  -->
+    <hr />
+   <a [routerLink]="['/job-list']" class="btn btn-primary">رجوع</a>
+    <br>
+    <br>
+    
+   <div class="row">
+        <div class="span2 display-label">اسم المتقدم</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.fullName}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">الديانة</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.religion}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">الجنس</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.sex}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">دولة الإقامة</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.residentIn}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">المدينة</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.city}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">تاريخ الميلاد</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.dateOfBirth}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">الحالة الإجتماعية</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.maritalStatus}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">الوظيفة المتقدم إليها</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.jobTitle}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">المؤهلات</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.qualification}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">التخصص التربوي</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.eduSpecialization}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">عدد سنوات الخبرة</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.yearsOfExperience}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">الجوال</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.mobile}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">البريد الإلكتروني</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.email}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2 display-label">تاريخ التقديم</div>
+        <div class="span4 display-values">
+            <p>{{(application | async)?.createdAt | date:'medium'}}</p>
+        </div>
+    </div>
+
+  </div>
+  <!-- /. PAGE INNER  -->
+</div>

@@ -23,6 +23,8 @@ import { ImageListComponent } from "app/image/image-list.component";
 import { ImageUploadService } from "app/image/image-upload.service";
 import { VideoUploadService } from "app/video/video.service";
 import { VideoListComponent } from "app/video/video-list.component";
+import { JobListComponent } from "app/job/job-list.component";
+import { ApplicationDetailComponent } from "app/job/application-detail.component";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBFYSIrNmiEndZqrFJ-GcHecrOXxwPrPB4",
@@ -48,6 +50,8 @@ export const firebaseConfig = {
     ImageComponent,
     ImageListComponent,
     JobComponent,
+    JobListComponent,
+    ApplicationDetailComponent,
     ElearningComponent,
     ContactUsComponent
   ],
@@ -68,6 +72,8 @@ export const firebaseConfig = {
       { path: 'video-list', component: VideoListComponent },
       { path: 'map', component: MapComponent },
       { path: 'job', component: JobComponent },
+      { path: 'job-list', component: JobListComponent },
+      { path: 'application-detail/:id', component: ApplicationDetailComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }

@@ -93,5 +93,5 @@ export class JobApplication{
     yearsOfExperience: string;
     mobile: string;
     email: string;
-    createdAt: Date;
+    createdAt: string;
 }

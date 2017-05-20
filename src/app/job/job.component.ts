@@ -32,7 +32,7 @@ export class JobComponent implements OnInit {
       eduSpecialization: ['', Validators.required],
       yearsOfExperience: ['', Validators.required],
       mobile: ['', Validators.required],
-      email: ['', Validators.required]
+      email: ['', Validators.required],
     });
   }
 
@@ -51,7 +51,7 @@ export class JobComponent implements OnInit {
       yearsOfExperience: this.jobApplicationFrom.value.yearsOfExperience,
       mobile: this.jobApplicationFrom.value.mobile,
       email: this.jobApplicationFrom.value.email,
-      createdAt: new Date()
+      createdAt: new Date().toISOString()
     };
 
     this.af.database.list('/jobs')
