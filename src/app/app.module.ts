@@ -74,6 +74,8 @@ export const firebaseConfig = {
       { path: 'job', component: JobComponent },
       { path: 'job-list', component: JobListComponent },
       { path: 'application-detail/:id', component: ApplicationDetailComponent },
+      { path: 'elearning', component: ElearningComponent },
+      { path: 'contact-us', component: ContactUsComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }

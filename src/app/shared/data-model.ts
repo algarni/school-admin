@@ -2,11 +2,11 @@
  * About data model
  */
 
-export interface IAboutPage{
+export interface IAboutPage {
     title: string;
     body: string;
 }
-export class AboutPage implements IAboutPage{
+export class AboutPage implements IAboutPage {
     title: string;
     body: string;
 
@@ -19,12 +19,12 @@ export class AboutPage implements IAboutPage{
  * Notification data model
  */
 
-export interface ISchoolNotification{
+export interface ISchoolNotification {
     title: string;
     body: string;
 }
 
-export class SchoolNotification implements ISchoolNotification{
+export class SchoolNotification implements ISchoolNotification {
     title: string;
     body: string;
 }
@@ -33,12 +33,12 @@ export class SchoolNotification implements ISchoolNotification{
  * News data model
  */
 
-export interface ISchoolNews{
+export interface ISchoolNews {
     title: string;
     body: string;
 }
 
-export class SchoolNews implements ISchoolNews{
+export class SchoolNews implements ISchoolNews {
     title: string;
     body: string;
 }
@@ -47,12 +47,12 @@ export class SchoolNews implements ISchoolNews{
  * Coordinates data model
  */
 
-export interface ISchoolCoordinates{
+export interface ISchoolCoordinates {
     lat: number;
     lng: number;
 }
 
-export class SchoolCoordinates implements ISchoolCoordinates{
+export class SchoolCoordinates implements ISchoolCoordinates {
     lat: number;
     lng: number;
 }
@@ -61,7 +61,7 @@ export class SchoolCoordinates implements ISchoolCoordinates{
  * Upload data model
  */
 
-export class Upload{
+export class Upload {
     $key: string;
     file: File;
     name: string;
@@ -79,7 +79,7 @@ export class Upload{
  *Job application data model
  */
 
-export class JobApplication{
+export class JobApplication {
     fullName: string;
     religion: string;
     sex: string;
@@ -94,4 +94,30 @@ export class JobApplication{
     mobile: string;
     email: string;
     createdAt: string;
+}
+
+/**
+ * Elearining Form Model
+ */
+
+export class Elearning {
+    title: string;
+    body: string;
+
+    constructor(title: string) {
+        this.title = title;
+    }
+}
+
+/**
+ * contact-us Form Model
+ */
+
+export class ContactUs {
+    title: string;
+    body: string;
+
+    constructor(title: string) {
+        this.title = title;
+    }
 }
